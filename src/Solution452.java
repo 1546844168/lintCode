@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author 潇潇暮雨
  * @create 2018-09-05   14:16
@@ -13,19 +10,7 @@ import java.util.List;
  * 给出链表 1->2->3->3->4->5->3, 和 val = 3, 你需要返回删除3之后的链表：1->2->4->5。
  */
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-}
-
 public class Solution452 {
-
-
     public ListNode removeElements(ListNode head, int val) {
         ListNode preNode = new ListNode(0);
         preNode.next = head;
@@ -44,6 +29,4 @@ public class Solution452 {
 //        ListNode node1 = new ListNode(1);
 
     }
-
-
 }
