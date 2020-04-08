@@ -59,19 +59,24 @@ public class Solution26 {
         return count;
     }
 
+    /**
+     * 通过指针移位来判断
+     *
+     * @param nums
+     * @return
+     */
     static int removeDuplicates1(int[] nums) {
-        if (nums == null) {
-            throw new IllegalArgumentException("nums不能为空");
-        }
-        int length = nums.length;
-        if (length == 0) {
-            return length;
+        if (nums == null || nums.length == 0) {
+            return 0;
         }
         int count = 0;
-        for (int i = 1; i < length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             if (nums[i] != nums[count]) {
+                // 这里可以优化一下。如果数组中的相邻元素都是不一样的，没有重复元素，就没必要原地复制一遍。
+                if (i - count > 1) {
+                    nums[count + 1] = nums[i];
+                }
                 count++;
-                nums[count] = nums[i];
             }
         }
         return count + 1;
@@ -81,7 +86,7 @@ public class Solution26 {
         int[] nums = Utils.getOrderArray(100, 100);
         System.out.println(Arrays.toString(nums));
         System.out.println("length = " + nums.length);
-        int count = removeDuplicates(null);
+        int count = removeDuplicates1(nums);
         Set<Integer> set = new HashSet<Integer>();
         for (int num : nums) {
             set.add(num);
