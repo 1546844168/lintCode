@@ -57,10 +57,37 @@ public class Solution350 {
         return Arrays.copyOf(nums2, size);
     }
 
+    /**
+     * 先对数组进行排序。如果数组是有序的话推荐使用这个方法
+     * <p>
+     * 时间复杂度：\mathcal{O}(n\log{n} + m\log{m})O(nlogn+mlogm)。其中 nn，mm 分别代表了数组的大小。我们对数组进行了排序然后进行了线性扫描。
+     * 空间复杂度：O(1)O(1)，我们忽略存储答案所使用的空间，因为它对算法本身并不重要。
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
+    public int[] intersect1(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        int i = 0, j = 0, k = 0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                i++;
+            } else if (nums1[i] > nums2[j]) {
+                j++;
+            } else {
+                nums1[k++] = nums1[i++];
+                j++;
+            }
+        }
+        return Arrays.copyOfRange(nums1, 0, k);
+    }
+
     public static void main(String[] args) {
         int[] num1 = {1, 1, 2, 3, 4, 4, 5};
         int[] num2 = {2, 3, 6, 4, 7, 9, 4, 2};
-        int[] intersect = new Solution350().intersect(num1, num2);
-        System.out.println(Arrays.toString(num2));
+        int[] intersect = new Solution350().intersect1(num1, num2);
+        System.out.println(Arrays.toString(intersect));
     }
 }
