@@ -60,6 +60,9 @@ public class Solution26 {
     }
 
     static int removeDuplicates1(int[] nums) {
+        if (nums == null) {
+            throw new IllegalArgumentException("nums不能为空");
+        }
         int length = nums.length;
         if (length == 0) {
             return length;
@@ -78,7 +81,7 @@ public class Solution26 {
         int[] nums = Utils.getOrderArray(100, 100);
         System.out.println(Arrays.toString(nums));
         System.out.println("length = " + nums.length);
-        int count = removeDuplicates(nums);
+        int count = removeDuplicates(null);
         Set<Integer> set = new HashSet<Integer>();
         for (int num : nums) {
             set.add(num);
