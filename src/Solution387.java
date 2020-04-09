@@ -1,4 +1,4 @@
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -32,7 +32,7 @@ public class Solution387 {
         }
         char[] arr = s.toCharArray();
         int length = arr.length;
-        Map<Character, Integer> map = new LinkedHashMap<Character, Integer>(length);
+        Map<Character, Integer> map = new HashMap<Character, Integer>(length);
         for (char c : arr) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
