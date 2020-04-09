@@ -32,7 +32,6 @@ public class Solution206 {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode last = null;
-
         while (head != null) {
             prev = new ListNode(head.val);
             prev.next = last;
