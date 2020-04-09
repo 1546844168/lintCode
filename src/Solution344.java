@@ -43,6 +43,22 @@ public class Solution344 {
         System.out.println(Arrays.toString(s));
     }
 
+    /**
+     * 代码稍作优化，更加简洁。
+     *
+     * @param s
+     */
+    public void reverseString1(char[] s) {
+        int k = s.length;
+        int halfLen = s.length >> 2;
+        for (int i = 0; i < halfLen; i++) {
+            char temp = s[i];
+            s[i] = s[--k];
+            s[k] = temp;
+        }
+        System.out.println(Arrays.toString(s));
+    }
+
     public static void main(String[] args) {
         char[] s = {'h', 'e', 'i', 'l', 'o', '1'};
         new Solution344().reverseString(s);
