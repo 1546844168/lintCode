@@ -52,6 +52,12 @@ public class Solution14 {
         return i;
     }
 
+    /**
+     * 先求出数组中所有字符串的最小长度，然后根据最小长度遍历比较。
+     *
+     * @param strs
+     * @return
+     */
     public String longestCommonPrefix2(String[] strs) {
         if (strs == null) {
             throw new IllegalArgumentException("参数不能为空");
