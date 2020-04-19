@@ -1,2 +1,4 @@
 练武不练功，到头一场空，
 为了提高自己的算法能力，在lintCode进行刷题。
+其中solution包是Leetcode题库里面的非面试题。
+interview是Leetcode题库里面的面试题。
