@@ -20,7 +20,7 @@ public class Solution452 {
         preNode.next = head;
         ListNode curNode = preNode;
         while (curNode.next != null) {
-            if (curNode.next.val == 3) {
+            if (curNode.next.val == val) {
                 curNode.next = curNode.next.next;
             } else {
                 curNode = curNode.next;
