@@ -16,8 +16,9 @@ package solution;
  */
 public class Solution2 {
     public long trailingZeros(long n) {
-        if (n < 5)
+        if (n < 5) {
             return 0;
+        }
         long num = n;
         long count = 0;
         while (num >= 5){

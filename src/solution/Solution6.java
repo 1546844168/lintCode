@@ -1,5 +1,7 @@
 package solution;
 
+import java.util.Arrays;
+
 /**
  * @author 潇潇暮雨
  * @create 2018-09-04   15:25
@@ -31,14 +33,18 @@ public class Solution6 {
                 j++;
             }
         }
-        while (j <= B.length - 1) {
+        while (j < B.length) {
             result[cur++] = B[j++];
         }
-        while (i <= A.length - 1) {
+        while (i < A.length) {
             result[cur++] = A[i++];
         }
-
         return result;
+    }
+
+    public static void main(String[] args) {
+        int[] ints = mergeSortedArray(new int[]{1, 5}, new int[]{2, 4, 5, 6});
+        System.out.println(Arrays.toString(ints));
     }
 
 }
